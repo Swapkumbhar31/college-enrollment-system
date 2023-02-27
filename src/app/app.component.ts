@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {AppState} from "./app-state/app-state";
-import {Store} from "@ngrx/store";
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
@@ -13,7 +11,6 @@ export class AppComponent {
 
 
   constructor(
-    private store: Store<AppState>,
     private router: Router,
     private auth: AngularFireAuth
   ) {
@@ -24,19 +21,6 @@ export class AppComponent {
       } else {
         this.router.navigate(['/auth/login']);
       }
-      console.log(value?.toJSON());
     });
-
-    // this.store.select(profileState).pipe(
-    //   takeWhile(value => value === 'pending')
-    // ).subscribe((state) => {
-    //   this.store.dispatch(fetchProfile());
-    // });
-    // this.store.select(profileState).pipe(
-    //   filter(value => value === 'error')
-    // ).subscribe(value => {
-    //   this.router.navigate(['/auth/login']).then(r => {
-    //   });
-    // });
   }
 }

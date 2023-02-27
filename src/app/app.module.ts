@@ -10,7 +10,6 @@ import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
-import {AppStateModule} from "./app-state/app-state.module";
 import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
@@ -27,7 +26,6 @@ import {MatDialogModule} from "@angular/material/dialog";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AppRoutingModule,
-    AppStateModule,
     MatDialogModule,
   ],
   providers: [],

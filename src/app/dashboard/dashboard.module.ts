@@ -22,6 +22,7 @@ import {AddEnrollmentComponent} from "./add-enrollment/add-enrollment.component"
 import {EnrollmentsComponent} from "./enrollments/enrollments.component";
 import {MatSelectModule} from "@angular/material/select";
 import {AddClassComponent} from "./add-class/add-class.component";
+import {StudentClassesListComponent} from './student-classes-list/student-classes-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {AddClassComponent} from "./add-class/add-class.component";
     AddEnrollmentComponent,
     EnrollmentsComponent,
     AddClassComponent,
+    StudentClassesListComponent,
   ],
   imports: [
     CommonModule,

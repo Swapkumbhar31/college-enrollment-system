@@ -8,12 +8,16 @@ import {Router} from "@angular/router";
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-
+  email: string | null | undefined = '';
   constructor(
-    private auth: AngularFireAuth,
+    public auth: AngularFireAuth,
     private router: Router
   ) {
+    this.auth.user.subscribe(value => {
+      this.email = value?.email;
+    })
   }
+
 
   ngOnInit(): void {
   }
