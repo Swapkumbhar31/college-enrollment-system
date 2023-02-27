@@ -21,7 +21,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {AddEnrollmentComponent} from "./add-enrollment/add-enrollment.component";
 import {EnrollmentsComponent} from "./enrollments/enrollments.component";
 import {MatSelectModule} from "@angular/material/select";
-
+import {AddClassComponent} from "./add-class/add-class.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import {MatSelectModule} from "@angular/material/select";
     ClassesComponent,
     AddStudentComponent,
     AddEnrollmentComponent,
-    EnrollmentsComponent
+    EnrollmentsComponent,
+    AddClassComponent,
   ],
   imports: [
     CommonModule,
@@ -50,4 +51,5 @@ import {MatSelectModule} from "@angular/material/select";
     MatSelectModule
   ]
 })
-export class DashboardModule { }
+export class DashboardModule {
+}
