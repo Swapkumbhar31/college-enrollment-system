@@ -8,7 +8,7 @@
   <mat-list-option routerLink="/dashboard/enrollments">
     Enrollments
   </mat-list-option>
-  <mat-list-option routerLink="/auth/login">
+  <mat-list-option (click)="logout()">
     Logout
   </mat-list-option>
 </mat-selection-list>

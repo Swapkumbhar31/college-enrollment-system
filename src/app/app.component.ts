@@ -1,10 +1,8 @@
 import {Component} from '@angular/core';
-import {filter, takeWhile} from "rxjs";
-import {profileState} from "./app-state/profile/profile.selector";
 import {Router} from "@angular/router";
 import {AppState} from "./app-state/app-state";
 import {Store} from "@ngrx/store";
-import {fetchProfile} from "./app-state/profile/profile.actions";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-root',
@@ -17,17 +15,28 @@ export class AppComponent {
   constructor(
     private store: Store<AppState>,
     private router: Router,
+    private auth: AngularFireAuth
   ) {
-    this.store.select(profileState).pipe(
-      takeWhile(value => value === 'pending')
-    ).subscribe((state) => {
-      this.store.dispatch(fetchProfile());
+
+    this.auth.onAuthStateChanged((value) => {
+      if (value) {
+        this.router.navigate(['/dashboard/students'])
+      } else {
+        this.router.navigate(['/auth/login']);
+      }
+      console.log(value?.toJSON());
     });
-    this.store.select(profileState).pipe(
-      filter(value => value === 'error')
-    ).subscribe(value => {
-      this.router.navigate(['/auth/login']).then(r => {
-      });
-    });
+
+    // this.store.select(profileState).pipe(
+    //   takeWhile(value => value === 'pending')
+    // ).subscribe((state) => {
+    //   this.store.dispatch(fetchProfile());
+    // });
+    // this.store.select(profileState).pipe(
+    //   filter(value => value === 'error')
+    // ).subscribe(value => {
+    //   this.router.navigate(['/auth/login']).then(r => {
+    //   });
+    // });
   }
 }

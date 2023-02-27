@@ -12,9 +12,10 @@ export class ProfileEffects {
     return this.actions$.pipe(
       ofType(fetchProfile),
       switchMap(() =>
-        from(this.auth.user)
+        from(this.auth.currentUser)
           .pipe(
             map((data: any) => {
+              console.log(data);
               if (data) {
                 return fetchProfileSuccess({user: data});
               }
