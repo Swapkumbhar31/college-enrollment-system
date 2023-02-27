@@ -1,0 +1,30 @@
+<form (submit)="addClass()" [formGroup]="form">
+  <div fxLayout="column" fxLayoutGap="20px">
+    <mat-card-header fxLayout fxLayoutAlign="center center">
+      <span>Add Student</span>
+      <span fxFlex></span>
+      <button mat-dialog-close="" mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content fxLayout="column">
+      <mat-form-field appearance="fill">
+        <mat-label>Class Id</mat-label>
+        <input formControlName="id" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Timing</mat-label>
+        <input formControlName="timing" matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Room Id</mat-label>
+        <input formControlName="room_id" matInput>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button color="primary" mat-flat-button>Add</button>
+    </mat-card-actions>
+  </div>
+
+</form>
