@@ -18,6 +18,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatDialogModule} from "@angular/material/dialog";
+import {AddEnrollmentComponent} from "./add-enrollment/add-enrollment.component";
+import {EnrollmentsComponent} from "./enrollments/enrollments.component";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -25,7 +28,9 @@ import {MatDialogModule} from "@angular/material/dialog";
     StudentsComponent,
     LayoutComponent,
     ClassesComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    AddEnrollmentComponent,
+    EnrollmentsComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +46,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ]
 })
 export class DashboardModule { }
