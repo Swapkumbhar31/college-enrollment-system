@@ -1,42 +1,7 @@
-<div fxLayout="column" fxLayoutGap="20px">
-  <div fxLayout fxLayoutAlign="start center">
-    <span class="text-3xl">Classes</span>
-    <span fxFlex></span>
-    <div>
-      <button (click)="addStudent()" color="primary" mat-raised-button>Add Class</button>
-    </div>
+<div fxLayout fxLayoutAlign="start center">
+  <span class="mat-h1">Classes</span>
+  <span fxFlex></span>
+  <div>
+    <button mat-raised-button color="primary">Add Student</button>
   </div>
-  <mat-divider></mat-divider>
-  <table [dataSource]="dataSource$" class="mat-elevation-z8" mat-table>
-
-    <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell>Class Id</th>
-      <td *matCellDef="let element" mat-cell> {{element.id}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="timing">
-      <th *matHeaderCellDef mat-header-cell> Timing</th>
-      <td *matCellDef="let element" mat-cell> {{element.timing}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="room_id">
-      <th *matHeaderCellDef mat-header-cell> Room id</th>
-      <td *matCellDef="let element" mat-cell> {{element.room_id}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="action">
-      <th *matHeaderCellDef mat-header-cell></th>
-      <td *matCellDef="let element" mat-cell style="width: 120px">
-        <button (click)="edit(element)" mat-icon-button>
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button (click)="delete(element)" mat-icon-button>
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </ng-container>
-
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
-  </table>
 </div>
