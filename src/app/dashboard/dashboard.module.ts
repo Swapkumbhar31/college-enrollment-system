@@ -18,6 +18,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {MatDialogModule} from "@angular/material/dialog";
+import { AddClassComponent } from './add-class/add-class.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     StudentsComponent,
     LayoutComponent,
     ClassesComponent,
-    AddStudentComponent
+    AddStudentComponent,
+    AddClassComponent
   ],
   imports: [
     CommonModule,
