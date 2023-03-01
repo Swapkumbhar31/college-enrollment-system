@@ -24,6 +24,13 @@
       <td *matCellDef="let element" mat-cell> {{element.room_id}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="link">
+      <th *matHeaderCellDef mat-header-cell>Classes</th>
+      <td *matCellDef="let element" mat-cell>
+        <span (click)="viewStudents(element)" class="text-blue-600 cursor-pointer">View</span>
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="action">
       <th *matHeaderCellDef mat-header-cell></th>
       <td *matCellDef="let element" mat-cell style="width: 120px">

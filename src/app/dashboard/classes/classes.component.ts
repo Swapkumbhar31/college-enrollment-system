@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {AddClassComponent} from "../add-class/add-class.component";
+import {ClassStudentListComponent} from "../class-student-list/class-student-list.component";
 
 @Component({
   selector: 'app-classes',
@@ -9,7 +10,7 @@ import {AddClassComponent} from "../add-class/add-class.component";
   styleUrls: []
 })
 export class ClassesComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'timing', 'room_id', 'action'];
+  displayedColumns: string[] = ['id', 'timing', 'room_id', 'link', 'action'];
   dataSource$: any[] = [];
 
   constructor(
@@ -44,6 +45,13 @@ export class ClassesComponent implements OnInit {
     this.dialog.open(AddClassComponent, {
       width: '50%',
       data: student
+    });
+  }
+
+  viewStudents(element: any) {
+    this.dialog.open(ClassStudentListComponent, {
+      width: '50%',
+      data: element
     });
   }
 }
